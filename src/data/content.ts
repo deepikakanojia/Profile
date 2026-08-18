@@ -212,10 +212,13 @@ export const hobbies = [
 ]
 
 export const nav = [
-  { id: 'about', label: 'About' },
-  { id: 'experience', label: 'Experience' },
-  { id: 'research', label: 'Research' },
-  { id: 'projects', label: 'Projects' },
-  { id: 'more', label: 'More' },
-  { id: 'contact', label: 'Contact' },
+  { path: '/', label: 'Home' },
+  { path: '/projects', label: 'Projects' },
+  { path: '/portfolio-and-work-experience', label: 'Portfolio and Work Experience' },
+  { path: '/research', label: 'Research' },
+  { path: '/position-of-responsibility', label: 'Position Of Responsibility' },
+  { path: '/workshop-and-conferences', label: 'Workshop and Conferences' },
+  { path: '/hobbies', label: 'Hobbies' },
+  { path: '/contact-me', label: 'Contact me' },
+  { path: '/queries-about-m-tech-programme', label: 'Queries about M.Tech Programme' },
 ]

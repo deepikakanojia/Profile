@@ -1,15 +1,21 @@
 import { motion } from 'framer-motion'
-import { ExternalLink, Rocket } from 'lucide-react'
-import SectionHeading from './SectionHeading'
+import { ExternalLink, FolderKanban, Rocket } from 'lucide-react'
+import PageHero from '../components/PageHero'
+import PageTransition from '../components/PageTransition'
 import { projects } from '../data/content'
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 md:py-32 relative">
-      <div className="section-container">
-        <SectionHeading eyebrow="Projects" title="Selected projects" description="Prototypes and studies spanning VR, adaptive learning, robotics, and game design." />
+    <PageTransition>
+      <PageHero
+        icon={FolderKanban}
+        eyebrow="Projects"
+        title="Selected projects"
+        description="Prototypes and studies spanning VR, adaptive learning, robotics, and game design."
+      />
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <section className="pb-24 md:pb-32">
+        <div className="section-container grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {projects.map((p, i) => (
             <motion.div
               key={p.title}
@@ -45,7 +51,7 @@ export default function Projects() {
             </motion.div>
           ))}
         </div>
-      </div>
-    </section>
+      </section>
+    </PageTransition>
   )
 }

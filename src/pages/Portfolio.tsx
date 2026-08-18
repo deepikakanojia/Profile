@@ -1,15 +1,21 @@
 import { motion } from 'framer-motion'
 import { Briefcase, MapPin } from 'lucide-react'
-import SectionHeading from './SectionHeading'
+import PageHero from '../components/PageHero'
+import PageTransition from '../components/PageTransition'
 import { experience } from '../data/content'
 
-export default function Experience() {
+export default function Portfolio() {
   return (
-    <section id="experience" className="py-24 md:py-32 relative">
-      <div className="section-container">
-        <SectionHeading eyebrow="Career" title="Experience" description="From curriculum design to enterprise L&D, building learning that scales." />
+    <PageTransition>
+      <PageHero
+        icon={Briefcase}
+        eyebrow="Career"
+        title="Portfolio & work experience"
+        description="From curriculum design to enterprise L&D, building learning that scales."
+      />
 
-        <div className="relative">
+      <section className="pb-24 md:pb-32">
+        <div className="section-container relative">
           <div className="absolute left-[19px] top-2 bottom-2 w-px bg-gradient-to-b from-[color:var(--color-violet)] via-[color:var(--color-pink)] to-transparent md:left-[23px]" />
 
           <div className="space-y-10">
@@ -27,9 +33,7 @@ export default function Experience() {
                 </div>
 
                 <div className="p-6 rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)]/50 hover:border-[color:var(--color-violet)]/40 transition-colors">
-                  <div className="flex flex-wrap items-baseline justify-between gap-2 mb-1">
-                    <h3 className="font-display font-semibold text-lg">{exp.role}</h3>
-                  </div>
+                  <h3 className="font-display font-semibold text-lg mb-1">{exp.role}</h3>
                   <div className="flex items-center gap-1.5 text-sm text-[color:var(--color-pink)] mb-4">
                     <span>{exp.org}</span>
                     {exp.location && (
@@ -51,7 +55,7 @@ export default function Experience() {
             ))}
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </PageTransition>
   )
 }

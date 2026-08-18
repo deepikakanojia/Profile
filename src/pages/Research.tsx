@@ -1,19 +1,21 @@
 import { motion } from 'framer-motion'
 import { FlaskConical } from 'lucide-react'
-import SectionHeading from './SectionHeading'
+import PageHero from '../components/PageHero'
+import PageTransition from '../components/PageTransition'
 import { research } from '../data/content'
 
 export default function Research() {
   return (
-    <section id="research" className="py-24 md:py-32 relative">
-      <div className="section-container">
-        <SectionHeading
-          eyebrow="Research"
-          title="Publications & research work"
-          description="Studying how learners think and feel — through eye-tracking, cognitive science, and data."
-        />
+    <PageTransition>
+      <PageHero
+        icon={FlaskConical}
+        eyebrow="Research"
+        title="Publications & research work"
+        description="Studying how learners think and feel — through eye-tracking, cognitive science, and data."
+      />
 
-        <div className="grid md:grid-cols-2 gap-5">
+      <section className="pb-24 md:pb-32">
+        <div className="section-container grid md:grid-cols-2 gap-5">
           {research.map((r, i) => (
             <motion.div
               key={r.title}
@@ -37,7 +39,7 @@ export default function Research() {
             </motion.div>
           ))}
         </div>
-      </div>
-    </section>
+      </section>
+    </PageTransition>
   )
 }
