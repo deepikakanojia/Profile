@@ -211,14 +211,23 @@ export const hobbies = [
   { title: 'Gardening', description: 'My friends call me a "plant mommy."' },
 ]
 
-export const nav = [
+export type NavItem =
+  | { path: string; label: string; children?: undefined }
+  | { label: string; path?: undefined; children: { path: string; label: string }[] }
+
+export const nav: NavItem[] = [
   { path: '/', label: 'Home' },
-  { path: '/projects', label: 'Projects' },
+  {
+    label: 'Profile',
+    children: [
+      { path: '/projects', label: 'Projects' },
+      { path: '/research', label: 'Research' },
+      { path: '/position-of-responsibility', label: 'Position Of Responsibility' },
+      { path: '/queries-about-m-tech-programme', label: 'Queries about M.Tech Programme' },
+    ],
+  },
   { path: '/portfolio-and-work-experience', label: 'Portfolio and Work Experience' },
-  { path: '/research', label: 'Research' },
-  { path: '/position-of-responsibility', label: 'Position Of Responsibility' },
   { path: '/workshop-and-conferences', label: 'Workshop and Conferences' },
   { path: '/hobbies', label: 'Hobbies' },
   { path: '/contact-me', label: 'Contact me' },
-  { path: '/queries-about-m-tech-programme', label: 'Queries about M.Tech Programme' },
 ]
